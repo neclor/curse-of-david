@@ -1,0 +1,44 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Summer Game Jam"
+config/features=PackedStringArray("4.3", "Forward Plus")
+
+[display]
+
+window/size/viewport_width=1920
+window/size/viewport_height=1080
+window/stretch/mode="canvas_items"
+
+[file_customization]
+
+folder_colors={
+"res://assets/": "gray",
+"res://assets/sprites/": "yellow",
+"res://assets/sprites/entities/": "purple",
+"res://game/": "blue",
+"res://game/entities/": "purple",
+"res://game/entities/enemies/": "red",
+"res://game/entities/player/": "blue",
+"res://main/": "yellow",
+"res://menu/": "green",
+"res://resources/": "gray"
+}
+
+[global_group]
+
+entity=""
+player=""
+
+[gui]
+
+theme/custom_font="res://assets/fonts/Mochiy Pop One/MochiyPopOne-Regular.ttf"

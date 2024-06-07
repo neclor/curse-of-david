@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://d1hnfjj1sfujs"]
+
+[ext_resource type="PackedScene" uid="uid://jeo8nok6ytct" path="res://game/entities/base_entity/base_entity.tscn" id="1_hu44e"]
+[ext_resource type="Texture2D" uid="uid://cjnf3kb78e0dt" path="res://assets/sprites/entities/player.png" id="2_iw8t5"]
+
+[node name="Player" instance=ExtResource("1_hu44e")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_iw8t5")
+offset = Vector2(0, -128)
+
+[node name="Camera2D" type="Camera2D" parent="." index="3"]
