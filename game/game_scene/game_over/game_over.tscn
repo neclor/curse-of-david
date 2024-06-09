@@ -4,6 +4,7 @@
 
 [node name="GameOver" type="CanvasLayer"]
 process_mode = 3
+layer = 128
 script = ExtResource("1_xpwak")
 
 [node name="Panel" type="Panel" parent="."]

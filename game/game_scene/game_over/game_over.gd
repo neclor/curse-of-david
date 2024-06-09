@@ -20,6 +20,7 @@ func _ready():
 
 
 func game_over_func():
+	self.visible = true
 	game_over = true
 	timer.start()
 	label.text = "You are dead\n" + "you lived: " + str(get_parent().minutes) + " : " + str(get_parent().seconds) + "\n" + "you killed: " + str(get_parent().enemy_count)
@@ -27,6 +28,7 @@ func game_over_func():
 
 func king_dead():
 	if not flag_king:
+		self.visible = true
 		timer.start()
 		flag_king = true
 		get_tree().pause = true

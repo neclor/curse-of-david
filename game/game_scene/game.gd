@@ -4,7 +4,7 @@ var time: float = 0
 var seconds: int = 0
 var minutes: int = 0
 
-var MENU = load("res://menu/menu_scene/menu.tscn")
+const MENU = preload("res://menu/menu_scene/menu.tscn")
 
 var enemy_count: int = 0
 
@@ -23,8 +23,6 @@ var enemy_count: int = 0
 
 func _ready():
 	Signals.enemy_dead.connect(enemy_died)
-	
-
 
 
 
@@ -37,9 +35,10 @@ func _physics_process(delta: float):
 
 
 func _on_button_pressed():
-	get_tree().paused = not get_tree().paused
-	panel.visible = not panel.visible
-	texture_rect_2.visible = not texture_rect_2.visible
+	if not player.dead:
+		get_tree().paused = not get_tree().paused
+		panel.visible = not panel.visible
+		texture_rect_2.visible = not texture_rect_2.visible
 
 
 func enemy_died():

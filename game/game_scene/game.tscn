@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://bkdn1v1psfykt"]
+[gd_scene load_steps=18 format=4 uid="uid://bkdn1v1psfykt"]
 
 [ext_resource type="Script" path="res://game/game_scene/game.gd" id="1_def38"]
 [ext_resource type="Texture2D" uid="uid://hcvlrqa1ttk4" path="res://assets/sprites/floor_tileset.png" id="1_jo5sx"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bra3adg8ht425" path="res://assets/sprites/floor_tileset2.png" id="5_ca8tb"]
 [ext_resource type="Texture2D" uid="uid://dghflurqs1ph1" path="res://assets/sprites/button.png" id="6_01phv"]
 [ext_resource type="Texture2D" uid="uid://ber7wi50rhevt" path="res://assets/sprites/сastle.png" id="6_3g1a5"]
+[ext_resource type="PackedScene" uid="uid://dc17o0y4vor87" path="res://game/game_scene/game_over/game_over.tscn" id="9_x02sk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vywkd"]
 texture = ExtResource("1_jo5sx")
@@ -350,6 +351,9 @@ theme_override_constants/outline_size = 32
 theme_override_font_sizes/font_size = 64
 text = "48 : 54"
 horizontal_alignment = 1
+
+[node name="GameOver" parent="." instance=ExtResource("9_x02sk")]
+visible = false
 
 [connection signal="timeout" from="EnemySpawner/Timer" to="EnemySpawner" method="_on_timer_timeout"]
 [connection signal="timeout" from="EnemySpawner/Timer2" to="EnemySpawner" method="_on_timer_2_timeout"]

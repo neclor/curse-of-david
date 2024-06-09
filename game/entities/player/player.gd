@@ -9,5 +9,6 @@ func move() -> void:
 
 
 func die():
+	dead = true
 	Signals.game_over.emit()
 	get_tree().paused = true
