@@ -4,7 +4,9 @@ var time: float = 0
 var seconds: int = 0
 var minutes: int = 0
 
-const MENU = preload("res://menu/menu_scene/menu.tscn")
+
+#const MENU = load("res://menu/menu_scene/menu.tscn")
+
 
 var enemy_count: int = 0
 
@@ -63,5 +65,5 @@ func _on_button2_mouse_exited():
 
 
 func _on_button2_pressed():
-	#get_tree().change_scene_to_packed(MENU)
-	pass
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://menu/menu_scene/menu.tscn")
