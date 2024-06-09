@@ -1,2 +1,2 @@
-# summer-game-jam
+# curse-of-david
  
