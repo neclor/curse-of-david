@@ -2,7 +2,7 @@ extends Camera2D
 
 
 const MAX_ZOOM = Vector2(2, 2)
-const MIN_ZOOM = Vector2(0.5, 0.5)
+const MIN_ZOOM = Vector2(0.25, 0.25)
 
 
 func _input(event: InputEvent) -> void:

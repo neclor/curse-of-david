@@ -1,3 +1,4 @@
+class_name Entity
 extends CharacterBody2D
 
 
@@ -9,36 +10,51 @@ const POPUP_POINTS: PackedScene = preload("res://game/entities/base_entity/popup
 @export var hp: int = 100
 
 
+@export_group("Speed")
+@export var speed: int = 1000
+var speed_multiplier: float = 1
+
+
+var move_direction_vector: Vector2 = Vector2.ZERO
+
+
 var dead: bool = false
 
 
-func _ready():
-	pass
+@onready var sprite_2d: Sprite2D = $SpriteContainer/Sprite2D
+@onready var move_animation_player: AnimationPlayer = $SpriteContainer/MoveAnimationPlayer
+@onready var effect_animation_player: AnimationPlayer = $EffectAnimationPlayer
 
 
-func _physics_process(_delta):
-	pass
+func _physics_process(_delta) -> void:
+	move()
 
 
-func create_isometric_vector(vector: Vector2) -> Vector2:
+func _process(_delta) -> void:
+	move_animation()
+
+
+func move_animation() -> void:
+	if move_direction_vector == Vector2.ZERO:
+		#move_animation_player.stop()
+		#return
+		pass
+
+	if move_direction_vector.x != 0:
+		sprite_2d.flip_h = true if move_direction_vector.x < 0 else false
+
+	move_animation_player.play("move")
+
+
+func create_normalized_isometric_vector(vector: Vector2) -> Vector2:
 	var isometric_vector: Vector2 = Vector2(vector.x, vector.y * 2).normalized()
 	isometric_vector.y /= 2
 	return isometric_vector
 
 
-func move():
-	pass
-	func move():
-	var input_move_direction_vector = Vector2(Input.get_axis("move_left", "move_right"), Input.get_axis("move_up", "move_down"))
-		input_move_direction_vector.y /= 2
-
-		match input_move_direction_vector:
-			Vector2(0, 0):
-				set_state(State.IDLE)
-			_:
-				move_direction_vector = normalize_isometric_vector(input_move_direction_vector)
-				set_state(State.MOVE)
-				one_move()
+func move() -> void:
+	velocity = create_normalized_isometric_vector(move_direction_vector) * speed * speed_multiplier
+	move_and_slide()
 
 
 func create_popup_points(value: int, color: Color) -> void:
@@ -53,7 +69,7 @@ func take_heal(input_heal: int) -> void:
 	hp = clamp(hp + input_heal, 0, max_hp)
 
 	create_popup_points(input_heal, Color.GREEN)
-	animation_player.play("take_heal")
+	effect_animation_player.play("take_heal")
 
 
 func take_damage(input_damage: int) -> void:
@@ -63,7 +79,7 @@ func take_damage(input_damage: int) -> void:
 	check_death()
 
 	create_popup_points(input_damage, Color.RED)
-	animation_player.play("take_damage")
+	effect_animation_player.play("take_damage")
 
 
 func check_death() -> void:
@@ -73,10 +89,9 @@ func check_death() -> void:
 
 
 func die():
-	#Signals.enemy_died
+	if dead:
+		return
 	dead = true
-	await animation_player.animation_finished
-	animated_sprite_2d.visible = false
-	cpu_particles_2d.restart()
-	await cpu_particles_2d.finished
+	await effect_animation_player.animation_finished
+	sprite_2d.visible = false
 	queue_free()
