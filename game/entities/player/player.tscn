@@ -8,6 +8,8 @@
 [node name="Player" groups=["player"] instance=ExtResource("1_hu44e")]
 collision_layer = 20
 script = ExtResource("2_enjq2")
+max_hp = 200
+hp = 200
 speed = 1500
 
 [node name="Sprite2D" parent="SpriteContainer" index="0"]

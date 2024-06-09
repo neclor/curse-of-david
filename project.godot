@@ -18,6 +18,7 @@ config/features=PackedStringArray("4.3", "Forward Plus")
 
 Equation="*res://addons/equation_real_solver/equation_real_solver.gd"
 Deflection="*res://addons/deflection_ballistics_formula/deflection_ballistics_formula.gd"
+Signals="*res://main/signals.gd"
 
 [display]
 
@@ -43,7 +44,6 @@ folder_colors={
 "res://game/entities/": "purple",
 "res://game/entities/enemies/": "red",
 "res://game/entities/player/": "blue",
-"res://game/game_hud/": "green",
 "res://game/objects/": "yellow",
 "res://game/objects/curse/": "purple",
 "res://main/": "pink",
@@ -102,3 +102,7 @@ zoom_out={
 2d_physics/layer_4="enemy"
 2d_physics/layer_5="player"
 2d_physics/layer_7="projectile"
+
+[rendering]
+
+environment/defaults/default_clear_color=Color(0.752941, 0.752941, 0.752941, 1)

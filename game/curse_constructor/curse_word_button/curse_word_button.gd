@@ -21,7 +21,7 @@ func init(new_word: Curse.Words, new_value):
 			text = "Damage\n+" + str(new_value)
 			color = Color.BLUE_VIOLET
 		Curse.Words.SLOWDOWN:
-			text = "Speed\n-" + str(new_value * 100)
+			text = "Speed\n-" + str(new_value * 100) + "%"
 			color = Color.BLUE
 		Curse.Words.TIME:
 			text = "Time\n+" + str(new_value)
@@ -50,8 +50,10 @@ func _on_mouse_entered() -> void:
 
 func _on_mouse_exited() -> void:
 	#animation_player.play("waiting")
-	self_modulate = color
-	label.set("theme_override_colors/font_color", Color.WHITE)
+	if not first_button:
+		self_modulate = color
+		label.set("theme_override_colors/font_color", Color.WHITE)
+
 
 
 func _on_pressed():
@@ -61,6 +63,7 @@ func _on_pressed():
 func set_first_button():
 	first_button = true
 	label.text = "END"
+	self_modulate = Color.WHITE
 
 
 func remove():

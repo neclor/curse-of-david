@@ -6,11 +6,14 @@
 
 [node name="Wizard" instance=ExtResource("1_yr6qb")]
 script = ExtResource("2_rw6h6")
+damage = 5
 keep_distance = 2000
+max_hp = 50
+hp = 50
 speed = 1250
 
 [node name="AttackCooldown" parent="." index="0"]
-wait_time = 2.0
+wait_time = 5.0
 
 [node name="Sprite2D" parent="SpriteContainer" index="0"]
 texture = ExtResource("2_htncy")

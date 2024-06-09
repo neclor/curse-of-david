@@ -64,6 +64,7 @@ func create_popup_points(value: int, color: Color) -> void:
 
 
 func take_heal(input_heal: int) -> void:
+	print("heal")
 	if input_heal <= 0:
 		return
 	hp = clamp(hp + input_heal, 0, max_hp)
@@ -89,9 +90,4 @@ func check_death() -> void:
 
 
 func die():
-	if dead:
-		return
-	dead = true
-	await effect_animation_player.animation_finished
-	sprite_2d.visible = false
-	queue_free()
+	pass

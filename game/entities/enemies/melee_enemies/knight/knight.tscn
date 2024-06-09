@@ -5,8 +5,8 @@
 
 [node name="Knight" instance=ExtResource("1_gs3uc")]
 damage = 20
-max_hp = 200
-hp = 200
+max_hp = 150
+hp = 150
 
 [node name="Sprite2D" parent="SpriteContainer" index="0"]
 texture = ExtResource("2_ulios")

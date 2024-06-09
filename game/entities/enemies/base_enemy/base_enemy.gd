@@ -9,6 +9,9 @@ var attack_ready: bool = false
 var target: Entity
 
 
+@onready var attack_cooldown = $AttackCooldown
+
+
 func init(new_target: Entity = null) -> void:
 	target = new_target
 
@@ -23,3 +26,14 @@ func move() -> void:
 
 func _on_attack_cooldown_timeout() -> void:
 	attack_ready = true
+
+
+func die():
+	if dead:
+		return
+	Signals.enemy_dead.emit()
+	dead = true
+	attack_cooldown.stop()
+	sprite_2d.visible = false
+	await effect_animation_player.animation_finished
+	queue_free()

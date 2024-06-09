@@ -10,3 +10,8 @@ func _on_attack_cooldown_timeout() -> void:
 	for body in area_2d.get_overlapping_bodies():
 		if body.is_in_group("player"):
 			body.take_damage(damage)
+
+
+func _on_area_2d_body_entered(body):
+	if attack_ready and body.is_in_group("player"):
+		body.take_damage(damage)

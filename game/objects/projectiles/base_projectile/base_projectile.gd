@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 @export var damage: int = 20
-@export var speed: int = 2000
+@export var speed: int = 1750
 
 
 func init(new_velocity: Vector2) -> void:

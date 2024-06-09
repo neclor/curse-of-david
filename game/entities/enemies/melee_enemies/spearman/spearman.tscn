@@ -4,6 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cfkwgcjbkldgw" path="res://assets/sprites/entities/enemies/spearman.png" id="2_f0aa5"]
 
 [node name="Spearman" instance=ExtResource("1_jnswo")]
+max_hp = 50
+hp = 50
 speed = 1250
 
 [node name="Sprite2D" parent="SpriteContainer" index="0"]
