@@ -64,7 +64,6 @@ func create_popup_points(value: int, color: Color) -> void:
 
 
 func take_heal(input_heal: int) -> void:
-	print("heal")
 	if input_heal <= 0:
 		return
 	hp = clamp(hp + input_heal, 0, max_hp)

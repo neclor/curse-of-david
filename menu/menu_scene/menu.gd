@@ -1,15 +1,16 @@
 extends Control
 
 
-const GAME = preload("res://game/game_scene/game.tscn")
+
 @onready var settings = $Settings
 
 @onready var animation_player = $TextureRect/AnimationPlayer
 @onready var animation_player2 = $TextureRect2/AnimationPlayer
+@onready var story = $Story
 
 
 func _on_button_pressed():
-	get_tree().change_scene_to_packed(GAME)
+	story.visible = true
 
 
 func _on_button_2_pressed():

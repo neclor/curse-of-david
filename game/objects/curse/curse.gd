@@ -55,7 +55,6 @@ func _on_timer_timeout():
 			player.take_heal(damage / 10)
 	time += 1
 	if time >= lifetime:
-		print(time)
 		if get_parent().is_in_group("enemy"):
 			get_parent().speed_multiplier += slowdown_var
 		queue_free()

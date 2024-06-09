@@ -302,6 +302,7 @@ libraries = {
 [node name="TextureRect2" type="TextureRect" parent="GameHud/MarginContainer/VBoxContainer/Control"]
 process_mode = 3
 visible = false
+layout_mode = 0
 offset_left = 9.0
 offset_top = 146.0
 offset_right = 265.0

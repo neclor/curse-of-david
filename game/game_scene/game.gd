@@ -64,4 +64,5 @@ func _on_button2_mouse_exited():
 
 
 func _on_button2_pressed():
-	get_tree().change_scene_to_packed(MENU)
+	#get_tree().change_scene_to_packed(MENU)
+	pass

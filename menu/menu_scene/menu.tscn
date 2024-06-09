@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://7sneutl6cl8b"]
+[gd_scene load_steps=9 format=3 uid="uid://7sneutl6cl8b"]
 
 [ext_resource type="Script" path="res://menu/menu_scene/menu.gd" id="1_251ek"]
 [ext_resource type="PackedScene" uid="uid://co7otipb7bv3k" path="res://menu/background/background.tscn" id="2_4iyjx"]
 [ext_resource type="Texture2D" uid="uid://dghflurqs1ph1" path="res://assets/sprites/button.png" id="2_xxcx8"]
 [ext_resource type="PackedScene" uid="uid://cpirb3k47wrdk" path="res://menu/settings/settings.tscn" id="4_irkkj"]
+[ext_resource type="PackedScene" uid="uid://dhy1usnaqdul0" path="res://menu/menu_scene/story.tscn" id="5_pgry0"]
 
 [sub_resource type="Animation" id="Animation_qsnaq"]
 length = 0.001
@@ -123,6 +124,10 @@ flat = true
 layer = -1
 
 [node name="Settings" parent="." instance=ExtResource("4_irkkj")]
+visible = false
+
+[node name="Story" parent="." instance=ExtResource("5_pgry0")]
+layer = 5
 visible = false
 
 [connection signal="mouse_entered" from="TextureRect/Button" to="." method="_on_button_mouse_entered"]

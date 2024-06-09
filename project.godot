@@ -10,9 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Summer Game Jam"
-run/main_scene="res://game/game_scene/game.tscn"
+config/name="The Paper Curse"
+run/main_scene="res://menu/menu_scene/menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+config/icon="res://assets/sprites/сastle.png"
 
 [autoload]
 
@@ -105,4 +106,5 @@ zoom_out={
 
 [rendering]
 
+textures/vram_compression/import_etc2_astc=true
 environment/defaults/default_clear_color=Color(0.752941, 0.752941, 0.752941, 1)
