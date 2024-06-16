@@ -22,10 +22,8 @@ var enemy_count: int = 0
 @onready var texture_rect_2 = $GameHud/MarginContainer/VBoxContainer/Control/TextureRect2
 
 
-
 func _ready():
 	Signals.enemy_dead.connect(enemy_died)
-
 
 
 func _physics_process(delta: float):
@@ -45,7 +43,6 @@ func _on_button_pressed():
 
 func enemy_died():
 	enemy_count += 1
-
 
 
 func _on_button_mouse_entered():
